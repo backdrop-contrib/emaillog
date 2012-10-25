@@ -5,4 +5,5 @@
  */
 function emaillog_uninstall() {
   variable_del('emaillog_enabled');
+  variable_del('emaillog_severity');
 }
