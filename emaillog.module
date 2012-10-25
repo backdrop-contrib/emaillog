@@ -21,6 +21,12 @@ function emaillog_form_system_logging_settings_alter(&$form, $form_state) {
     '#options' => watchdog_severity_levels(),
     '#description' => t('Select minimum severity when entry should be sent by email.'),
   );
+  $form['emaillog']['emaillog_recipient'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Recipient'),
+    '#default_value' => variable_get('emaillog_recipient', variable_get('site_mail', ini_get('sendmail_from'))),
+    '#description' => t('Type email address where log entries should be sent to.'),
+  );
 }
 
 /**
@@ -42,7 +48,7 @@ function emaillog_watchdog(array $log_entry) {
 
   $severity_list = watchdog_severity_levels();
 
-  $to = variable_get('site_mail');
+  $to = variable_get('emaillog_recipient', variable_get('site_mail', ini_get('sendmail_from')));
   $params = array();
   $params['subject'] = t('@site_name @severity_desc', array(
     '@site_name' => variable_get('site_name', 'Drupal'), 
