@@ -1,9 +1,30 @@
 <?php
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function emaillog_form_system_logging_settings_alter(&$form, $form_state) {
+  $form['emaillog'] = array(
+    '#title' => 'Email Log',
+    '#type' => 'fieldset',
+    '#collapsed' => TRUE,
+  );
+  $form['emaillog']['emaillog_enabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Send log entries by email'),
+    '#default_value' => variable_get('emaillog_enabled', FALSE),
+  );
+}
+
+/**
  * Implements hook_watchdog().
  */
 function emaillog_watchdog(array $log_entry) {
+
+  // Feature needs to be enabled from configuraiton
+  if (!variable_get('emaillog_enabled', FALSE)) {
+    return;
+  }
 
   // Send email only if severity is one of WARNING, ERROR, CRITICAL, ALERT or
   // EMERGENCY.
