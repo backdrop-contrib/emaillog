@@ -1,0 +1,3 @@
+name = Email Log
+core = 7.x
+description = Sends log entires by email.

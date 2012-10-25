@@ -1,3 +1,0 @@
-name = Watchdog Email
-core = 7.x
-description = Sends watchdog entires by email.

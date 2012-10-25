@@ -3,7 +3,7 @@
 /**
  * Implements hook_watchdog().
  */
-function watchdog_email_watchdog(array $log_entry) {
+function emaillog_watchdog(array $log_entry) {
 
   // Send email only if severity is one of WARNING, ERROR, CRITICAL, ALERT or
   // EMERGENCY.
@@ -52,13 +52,13 @@ function watchdog_email_watchdog(array $log_entry) {
     '@link' => strip_tags($log_entry['link']), 
   ));
 
-  drupal_mail('watchdog_email', 'entry', $to, $language, $params);
+  drupal_mail('emaillog', 'entry', $to, $language, $params);
 }
 
 /**
  * Implements hook_mail().
  */
-function watchdog_email_mail($key, &$message, $params) {
+function emaillog_mail($key, &$message, $params) {
   switch ($key) {
     case 'entry':
       $message['subject'] = $params['subject'];
@@ -66,13 +66,3 @@ function watchdog_email_mail($key, &$message, $params) {
       break;
   }
 }
-
-
-
-
-
-
-
-
-
-
