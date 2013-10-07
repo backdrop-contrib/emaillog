@@ -1,10 +1,17 @@
 <?php
 
 /**
+ * @file
+ * Provides installation functions.
+ */
+
+/**
  * Implements hook_uninstall().
  */
 function emaillog_uninstall() {
   variable_del('emaillog_enabled');
   variable_del('emaillog_severity');
   variable_del('emaillog_recipient');
+  variable_del('emaillog_messages_subject');
+  variable_del('emaillog_messages_body');
 }

@@ -2,3 +2,5 @@ name = Email Log
 core = 7.x
 description = Sends log entries by email.
 configure = admin/config/development/logging
+dependencies[] = token
+files[] = emaillog.tokens.inc

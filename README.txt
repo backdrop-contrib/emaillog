@@ -1,8 +1,14 @@
+REQUIREMENTS
+============
+Requires token module: https://drupal.org/project/token
+
+
 DESCRIPTION
 ===========
 This is a lightweight module for sending log entries by email. Example use case
 would be to set your monitoring email address and configure it to send only
 alert and emergency error levels.
+
 
 CONFIGURAITON
 =============
