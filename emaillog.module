@@ -108,7 +108,7 @@ function emaillog_watchdog(array $log_entry) {
     'ip' => $log_entry['ip'],
     'request_uri' => $log_entry['request_uri'],
     'referer_uri' => $log_entry['referer'],
-    'uid' => $log_entry['uid'],
+    'uid' => $log_entry['user']->uid,
     'name' => $log_entry['user']->name,
     'link' => strip_tags($log_entry['link']),
     'message' => t($log_entry['message'], $log_entry['variables']),
