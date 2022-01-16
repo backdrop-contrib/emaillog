@@ -3,7 +3,7 @@ This is a lightweight module for sending log entries by email. Example use case
 would be to set your monitoring email address and configure it to send only
 alert and emergency error levels.
 
-When maintaining an site where critical log entries needs to be notified to site administrator, it is great to have them by email.
+When maintaining a site where critical log entries needs to be notified to site administrator, it is great to have them by email.
 
 This feature could be done with Rules but currently it would need to support log-entry tokens first to use them in "Send email" action. And not everybody wants to use Rules.
 
