@@ -7,7 +7,7 @@ When maintaining an site where critical log entries needs to be notified to site
 
 This feature could be done with Rules but currently it would need to support log-entry tokens first to use them in "Send email" action. And not everybody wants to use Rules.
 
-## CONFIGURAITON
+## CONFIGURATION
 You need to configure the module after enabling it. It doesn't react yet if you
 just enable it.
 
